@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Todo</title>
+</head>
+
+<body>
+
+    <form th:object="${blankItem}" action="/add" method="post">
+        <label for="title">Title</label>
+        <input th:field="*{title}" type="text" id="title" name="title" required><br><br>
+        <label for="description">Description</label>
+        <textarea th:field="*{description}" rows="4" id="description" name="description"></textarea><br><br>
+        <label for="isDone">Status</label>
+        <input th:field="*{isDone}" type="checkbox" id="isDone" name="isDone"><br><br>
+        <label for="dueDate">Due date</label>
+        <input th:field="*{dueDate}" type="date" id="dueDate" name="dueDate" required><br><br>
+        <input type="submit" value="Add todo">
+    </form>
+</body>
+
+</html>
